@@ -6,6 +6,10 @@ updatedDate: 22 Jan 2024
 draft: true
 tags: ["test", "markdown"]
 ---
+1. Create a TXT record in your DNS configuration for the following hostname: _github-pages-challenge-adit-bala.aditbala.com
+2. Use this code for the value of the TXT record: 68a6ee0a689c5d057ad9ab84153201
+3. Wait until your DNS configuration changes. This could take up to 24 hours to propagate.
+
 
 ## This is a H2 Heading
 

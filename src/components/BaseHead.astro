@@ -19,10 +19,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <title>{siteTitle}</title>
 
 {/* Icons / Favicon */}
-<link href={new URL("/personal/favicon.ico", Astro.site)} rel="icon" sizes="any" />
-<link href={new URL("/personal/icon.svg", Astro.site)} rel="icon" type="image/svg+xml" />
-<link href={new URL("/personal/apple-touch-icon.png", Astro.site)} rel="apple-touch-icon" />
-<link href={new URL("/personal/manifest.webmanifest", Astro.site)} rel="manifest" />
+<link href={new URL("/favicon.ico", Astro.site)} rel="icon" sizes="any" />
+<link href={new URL("/icon.svg", Astro.site)} rel="icon" type="image/svg+xml" />
+<link href={new URL("/apple-touch-icon.png", Astro.site)} rel="apple-touch-icon" />
+<link href={new URL("/manifest.webmanifest", Astro.site)} rel="manifest" />
 <link href={canonicalURL} rel="canonical" />
 
 {/* Primary Meta Tags */}
@@ -60,10 +60,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content={socialImageURL} property="twitter:image" />
 
 {/* Sitemap */}
-<link href={new URL("/personal/sitemap-index.xml", Astro.site)} rel="sitemap" />
+<link href={new URL("/sitemap-index.xml", Astro.site)} rel="sitemap" />
 
 {/* RSS auto-discovery */}
-<link href={new URL("/personal/rss.xml", Astro.site)} rel="alternate" title={siteConfig.title} type="application/rss+xml" />
+<link href={new URL("/rss.xml", Astro.site)} rel="alternate" title={siteConfig.title} type="application/rss+xml" />
 
 {/* Webmentions */}
 {

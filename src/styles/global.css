@@ -24,4 +24,26 @@
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
 	}
+	.title {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 600;
+		color: hsl(var(--theme-accent-2) / 1)
+	}
+	
+	.large-title {
+		font-size: 3rem;
+		line-height: 1;
+		font-weight: 400;
+		color: hsl(var(--theme-accent-2) / 1)
+	}
+	
+	.subtitle {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 300;
+		color: hsl(var(--theme-accent-2) / 1)
+	}
+	
 }
+

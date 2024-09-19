@@ -13,16 +13,26 @@ const socialLinks: {
 	name: string;
 }[] = [
 	{
+		friendlyName: "Linkedin",
+		link: "www.linkedin.com/in/aditya-balasubramanian",
+		name: "mdi:linkedin",
+	},
+	{
 		friendlyName: "Github",
-		link: "https://github.com/chrismwilliams/astro-cactus",
+		link: "https://github.com/adit-bala",
 		name: "mdi:github",
+	},
+	{
+		friendlyName: "Email",
+		link: "mailto:aditbala@berkeley.edu",
+		name: "mdi:email",
 	},
 ];
 ---
 
 <div class="flex flex-wrap items-end gap-x-2">
-	<p>Find me on</p>
-	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
+	<!-- <p>Find me on</p> -->
+	<ul class="flex flex-1 items-center gap-x-20 sm:flex-initial">
 		{
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
 				<li class="flex">

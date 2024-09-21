@@ -3,6 +3,7 @@ import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import pfp from "@/assets/pfp.jpg";
+import { newsFeed } from "@/data/news";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -27,17 +28,70 @@ import pfp from "@/assets/pfp.jpg";
 			<Image src={pfp} alt="Aditya Balasubramanian" class="h-auto w-72" />
 		</div>
 	</section>
-	<!-- <section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
+
+	<section aria-label="News feed" class="mt-16">
+		<h2 class="title mb-4 text-xl">currently</h2>
+		<ul class="mb-8 space-y-2">
 			{
-				allPostsByDate.map((p) => (
-					<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-						{/* @ts-expect-error - issue with -> @astrojs/check@0.9.3 */}
-						<PostPreview post={p} />
+				newsFeed.currently.map((item) => (
+					<li class="flex items-start font-mono text-sm">
+						<span class="mr-2">•</span>
+						<span>
+							{item.text.split(" ").map((word) =>
+								item.links && word in item.links ? (
+									<a
+										href={item.links[word]}
+										target="_blank"
+										class:list={[
+											"relative text-link",
+											"after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link",
+											"after:origin-bottom-right after:scale-x-0",
+											"hover:after:origin-bottom-left hover:after:scale-x-100",
+											"after:transition-transform after:duration-300 after:ease-in-out",
+										]}
+									>
+										{word}
+									</a>
+								) : (
+									`${word} `
+								)
+							)}
+						</span>
 					</li>
 				))
 			}
 		</ul>
-	</section> -->
+
+		<h2 class="title mb-4 text-xl">previously</h2>
+		<ul class="space-y-2">
+			{
+				newsFeed.previously.map((item) => (
+					<li class="flex items-start font-mono text-sm">
+						<span class="mr-2">•</span>
+						<span>
+							{item.text.split(" ").map((word) =>
+								item.links && word in item.links ? (
+									<a
+										href={item.links[word]}
+										target="_blank"
+										class:list={[
+											"relative text-link",
+											"after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link",
+											"after:origin-bottom-right after:scale-x-0",
+											"hover:after:origin-bottom-left hover:after:scale-x-100",
+											"after:transition-transform after:duration-300 after:ease-in-out",
+										]}
+									>
+										{word}
+									</a>
+								) : (
+									`${word} `
+								)
+							)}
+						</span>
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </PageLayout>

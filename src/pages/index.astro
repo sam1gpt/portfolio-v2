@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import pfp from "@/assets/pfp.jpg";
 import { newsFeed } from "@/data/news";
+import { processText } from "@/utils/linkify";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -32,66 +33,50 @@ import { newsFeed } from "@/data/news";
 	<section aria-label="News feed" class="mt-16">
 		<h2 class="title mb-4 text-xl">currently</h2>
 		<ul class="mb-8 space-y-2">
-			{
-				newsFeed.currently.map((item) => (
-					<li class="flex items-start font-mono text-sm">
-						<span class="mr-2">•</span>
-						<span>
-							{item.text.split(" ").map((word) =>
-								item.links && word in item.links ? (
-									<a
-										href={item.links[word]}
-										target="_blank"
-										class:list={[
-											"relative text-link",
-											"after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link",
-											"after:origin-bottom-right after:scale-x-0",
-											"hover:after:origin-bottom-left hover:after:scale-x-100",
-											"after:transition-transform after:duration-300 after:ease-in-out",
-										]}
-									>
-										{word}
-									</a>
-								) : (
-									`${word} `
-								)
-							)}
-						</span>
-					</li>
-				))
-			}
+		  {newsFeed.currently.map((item) => (
+			<li class="flex items-start font-mono text-sm">
+			  <span class="mr-2">•</span>
+			  <span>
+				{processText(item.text, item.links).map((part) => 
+				  part.type === 'link' ? (
+					<a
+					  href={part.href}
+					  target="_blank"
+					  class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out"
+					>
+					  {part.text}
+					</a>
+				  ) : (
+					part.content
+				  )
+				)}
+			  </span>
+			</li>
+		  ))}
 		</ul>
 
 		<h2 class="title mb-4 text-xl">previously</h2>
 		<ul class="space-y-2">
-			{
-				newsFeed.previously.map((item) => (
-					<li class="flex items-start font-mono text-sm">
-						<span class="mr-2">•</span>
-						<span>
-							{item.text.split(" ").map((word) =>
-								item.links && word in item.links ? (
-									<a
-										href={item.links[word]}
-										target="_blank"
-										class:list={[
-											"relative text-link",
-											"after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link",
-											"after:origin-bottom-right after:scale-x-0",
-											"hover:after:origin-bottom-left hover:after:scale-x-100",
-											"after:transition-transform after:duration-300 after:ease-in-out",
-										]}
-									>
-										{word}
-									</a>
-								) : (
-									`${word} `
-								)
-							)}
-						</span>
-					</li>
-				))
-			}
+		  {newsFeed.previously.map((item) => (
+			<li class="flex items-start font-mono text-sm">
+			  <span class="mr-2">•</span>
+			  <span>
+				{processText(item.text, item.links).map((part) => 
+				  part.type === 'link' ? (
+					<a
+					  href={part.href}
+					  target="_blank"
+					  class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out"
+					>
+					  {part.text}
+					</a>
+				  ) : (
+					part.content
+				  )
+				)}
+			  </span>
+			</li>
+		  ))}
 		</ul>
-	</section>
+	  </section>
 </PageLayout>

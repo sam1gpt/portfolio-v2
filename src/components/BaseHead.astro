@@ -78,13 +78,14 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DJCX5VQ2LM"></script>
-<script>
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-DJCX5VQ2LM"></script>
+<script is:inline define:vars={{ id: 'G-DJCX5VQ2LM' }}>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
-
-  gtag('config', 'G-DJCX5VQ2LM');
+  gtag('config', id);
 </script>
 
 <meta content={Astro.generator} name="generator" />

@@ -13,7 +13,6 @@ export const newsFeed: NewsFeed = {
 future: [
   {text: "codepoint fellow @ Sutter Hill Ventures", links: {"Sutter Hill Ventures": "https://jeffburke.substack.com/p/sutter-hill-ventures-the-silent-builders"}},
   {text: "cloud infrastructure swe @ Sigma Computing", links: {"Sigma Computing": "https://www.sigmacomputing.com/"}},
-  {text: "swe intern @ Deno", links: {"Deno": "https://deno.com/"}},
 ],
 
 currently: [

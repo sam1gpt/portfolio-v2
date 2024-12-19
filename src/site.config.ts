@@ -22,11 +22,11 @@ export const siteConfig: SiteConfig = {
     // Option to sort posts by updatedDate if set to true (if property exists). Default (false) will sort by publishDate
     sortPostsByUpdatedDate: false,
     // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-    title: "Astro Theme Cactus",
-    webmentions: {
-        // Webmention.io API endpoint. Get your own here: https://webmention.io/
-        link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
-    },
+    title: "aditbala's website",
+    // webmentions: {
+    //     // Webmention.io API endpoint. Get your own here: https://webmention.io/
+    //     link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
+    // },
 };
 
 // Used to generate links in both the Header & Footer.

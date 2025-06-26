@@ -2,7 +2,7 @@
 import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
-import pfp from "@/assets/pfp.jpg";
+import pfp from "@/assets/pfp copy.jpg";
 import { newsFeed } from "@/data/news";
 import { processText } from "@/utils/linkify";
 ---
@@ -11,90 +11,91 @@ import { processText } from "@/utils/linkify";
 	<section class="flex flex-col sm:flex-row">
 		<div class="flex-1 sm:max-w-lg sm:flex-auto">
 			<h1 class="subtitle mb-6">hello! my name is</h1>
-			<h2 class="large-title mb-6">aditya</h2>
+			<h2 class="large-title mb-6">samarth</h2>
 			<p class="font-mono text-sm font-normal leading-6">
-				i am passionate about distributed systems, large-scale performant architectures, and
-				designing high-throughput, fault-tolerant systems.
+				<p>👋 I build with code and think in data.</p>
+
+				<p>
+					🏀 When I’m not coding, you’ll find me sinking threes on the court or catching the latest
+					UFC bouts.
+				</p>
+
+				<p>
+					🎓 Currently gearing up for my final year at MIT Manipal, India, where I’ve been exploring
+					the art of turning ideas into working software.
+				</p>
+
+				<p>
+					💡 I'm all about solving problems — whether it's cracking DSA and SQL challenges on
+					platforms like LeetCode, GfG and Codeforces.
+				</p>
+
+				<p>
+					🔗 <a href="https://leetcode.com/u/samornot" target="_blank" class="text-link underline">
+						Check out my LeetCode grind
+					</a>
+				</p>
 			</p>
 			<br />
 			<br />
 			<SocialList />
 		</div>
 		<div class="flex-1 sm:max-w-md sm:flex-auto">
-			<Image src={pfp} alt="Aditya Balasubramanian" class="h-auto w-72" />
+			<Image src={pfp} alt="Samarth Mehra" class="h-auto w-72" />
 		</div>
 	</section>
 
 	<section aria-label="News feed" class="mt-16">
-		<h2 class="title mb-4 text-xl">future</h2>
-		<ul class="mb-8 space-y-2">
-		  {newsFeed.future.map((item) => (
-			<li class="flex items-start font-mono text-sm">
-			  <span class="mr-2">•</span>
-			  <span>
-				{processText(item.text, item.links).map((part) => 
-				  part.type === 'link' ? (
-					<a
-					  href={part.href}
-					  target="_blank"
-					  class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out"
-					>
-					  {part.text}
-					</a>
-				  ) : (
-					part.content
-				  )
-				)}
-			  </span>
-			</li>
-		  ))}
-		</ul>
 		<h2 class="title mb-4 text-xl">currently</h2>
 		<ul class="mb-8 space-y-2">
-		  {newsFeed.currently.map((item) => (
-			<li class="flex items-start font-mono text-sm">
-			  <span class="mr-2">•</span>
-			  <span>
-				{processText(item.text, item.links).map((part) => 
-				  part.type === 'link' ? (
-					<a
-					  href={part.href}
-					  target="_blank"
-					  class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out"
-					>
-					  {part.text}
-					</a>
-				  ) : (
-					part.content
-				  )
-				)}
-			  </span>
-			</li>
-		  ))}
+			{
+				newsFeed.currently.map((item) => (
+					<li class="flex items-start font-mono text-sm">
+						<span class="mr-2">•</span>
+						<span>
+							{processText(item.text, item.links).map((part) =>
+								part.type === "link" ? (
+									<a
+										href={part.href}
+										target="_blank"
+										class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-link after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
+									>
+										{part.text}
+									</a>
+								) : (
+									part.content
+								)
+							)}
+						</span>
+					</li>
+				))
+			}
 		</ul>
 
 		<h2 class="title mb-4 text-xl">previously</h2>
 		<ul class="space-y-2">
-		  {newsFeed.previously.map((item) => (
-			<li class="flex items-start font-mono text-sm">
-			  <span class="mr-2">•</span>
-			  <span>
-				{processText(item.text, item.links).map((part) => 
-				  part.type === 'link' ? (
-					<a
-					  href={part.href}
-					  target="_blank"
-					  class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-link after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out"
-					>
-					  {part.text}
-					</a>
-				  ) : (
-					part.content
-				  )
-				)}
-			  </span>
-			</li>
-		  ))}
+			{
+				newsFeed.previously.map((item) => (
+					<li class="flex items-start font-mono text-sm">
+						<span class="mr-2">•</span>
+						<span>
+							{processText(item.text, item.links).map((part) =>
+								part.type === "link" ? (
+									<a
+										href={part.href}
+										target="_blank"
+										class="relative text-link after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-link after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100"
+									>
+										{part.text}
+									</a>
+								) : (
+									part.content
+								)
+							)}
+						</span>
+					</li>
+				))
+			}
 		</ul>
-	  </section>
+	</section>
 </PageLayout>

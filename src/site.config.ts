@@ -3,7 +3,7 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
     // Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-    author: "Aditya Balasubramanian",
+    author: "Samarth Mehra",
     // Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
     date: {
         locale: "en-GB",
@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
         },
     },
     // Meta property used as the default description meta property
-    description: "A Portfolio website for Aditya Balasubramanian",
+    description: "A Portfolio website for Samarth Mehra",
     // HTML lang property, found in src/layouts/Base.astro L:18
     lang: "en-GB",
     // Meta property, found in src/components/BaseHead.astro L:42

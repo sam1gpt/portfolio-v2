@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adit-bala.github.iositemap-index.xml
+Sitemap: https://sam1gpt.github.iositemap-index.xml

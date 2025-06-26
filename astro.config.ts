@@ -18,10 +18,10 @@ import rehypeExternalLinks from "rehype-external-links";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://adit-bala.github.io',
+	site: 'https://samarth-three.vercel.app/',
   	base: '/',  
 	image: {
-		domains: ["webmention.io"],
+		domains: ["webmention"],
 	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
